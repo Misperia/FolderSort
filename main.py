@@ -7,7 +7,7 @@ from files_generator import file_generator
 
 
 
-def hande_file(path, root_folder, dist):
+def handle_file(path, root_folder, dist):
     target_folder = root_folder / dist
     target_folder.mkdir(exist_ok=True)
     path.replace(target_folder/normalize.normalize(path.name))
@@ -56,22 +56,22 @@ def main(folder_path):
     scan.scan(folder_path)
 
     for file in scan.jpeg_files:
-        hande_file(file, folder_path, "JPEG")
+        handle_file(file, folder_path, "JPEG")
 
     for file in scan.jpg_files:
-        hande_file(file, folder_path, "JPG")
+        handle_file(file, folder_path, "JPG")
 
     for file in scan.png_files:
-        hande_file(file, folder_path, "PNG")
+        handle_file(file, folder_path, "PNG")
 
     for file in scan.txt_files:
-        hande_file(file, folder_path, "TXT")
+        handle_file(file, folder_path, "TXT")
 
     for file in scan.docx_files:
-        hande_file(file, folder_path, "DOCX")
+        handle_file(file, folder_path, "DOCX")
 
     for file in scan.others:
-        hande_file(file, folder_path, "OTHERS")
+        handle_file(file, folder_path, "OTHERS")
 
     for file in scan.archives:
         handle_archive(file, folder_path, "ARCHIVE")
